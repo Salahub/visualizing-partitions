@@ -1,13 +1,14 @@
-### The Draw Part Function ###############################################################
+### Drawing a Single Partition ###########################################################
 
-##' @title Drawing a Single Partition
+##' @title Generating Partition Graphical Objects
 ##' @param partition a partition represented as a sequence of positive integers
 ##' @param type one of "circle" or "rectangle"
 ##' @param eps a positive real number
-##' @return a graphical object and a plot of the partition
+##' @param params a list of graphical parameters to be applied to the output
+##' @return a graphical object corresponding to a plot of the partition
 ##' @author Chris Salahub
-draw_partition <- function(partition, type = c("circle","rectangle"),
-                           eps = 0.1) {
+part_coords <- function(partition, type = c("circle","rectangle"),
+                        eps = 0.1, params = gpar()) {
     n <- sum(partition) # the value being partitioned, needed for checks and calculations
     ## perform checks
     stopifnot(all(partition >= 0)) # check the partition provided is valid
@@ -22,9 +23,21 @@ draw_partition <- function(partition, type = c("circle","rectangle"),
     ## use this to generate x and y coordinates
     ycoords <- rep(rev(gencoords), times = partition) # simply replicate appropriately
     xcoords <- gencoords[unlist(sapply(partition, seq_len))] # more complicated, generate correct sequences for indexing
-    ## plot using the x and y coordinates
-    grid.newpage()
-    grid.rect(x = xcoords, y = ycoords, width = width, height = width)
+    ## create a graphical object to be plotted later
+    rectGrob(x = xcoords, y = ycoords, width = width, height = width, gp = params)
 }
 
 
+##' @title Drawing a Single Partition
+##' @param partition a partition represented as a sequence of positive integers
+##' @param type one of "circle" or "rectangle"
+##' @param eps a positive real number
+##' @param params a list of graphical paramters to be applied to the output
+##' @return a plot of the partition
+##' @author Chris Salahub
+draw_part <- function(partition, type = c("circle","rectangle"), eps = 0.1,
+                      params = gpar()) {
+    grid.newpage() # create the plotting area
+    rects <- part_coords(partition, type, eps, params) # create graphical object
+    grid.draw(rects) # draw the object
+}
