@@ -1,4 +1,4 @@
-### Drawing a Single Partition ###########################################################
+### Generating Partition Graphical Objects ###############################################
 
 ##' @title Generating Partition Graphical Objects
 ##' @param partition a partition represented as a sequence of positive integers
@@ -25,19 +25,4 @@ part_coords <- function(partition, type = c("circle","rectangle"),
     xcoords <- gencoords[unlist(sapply(partition, seq_len))] # more complicated, generate correct sequences for indexing
     ## create a graphical object to be plotted later
     rectGrob(x = xcoords, y = ycoords, width = width, height = width, gp = params)
-}
-
-
-##' @title Drawing a Single Partition
-##' @param partition a partition represented as a sequence of positive integers
-##' @param type one of "circle" or "rectangle"
-##' @param eps a positive real number
-##' @param params a list of graphical paramters to be applied to the output
-##' @return a plot of the partition
-##' @author Chris Salahub
-draw_part <- function(partition, type = c("circle","rectangle"), eps = 0.1,
-                      params = gpar()) {
-    grid.newpage() # create the plotting area
-    rects <- part_coords(partition, type, eps, params) # create graphical object
-    grid.draw(rects) # draw the object
 }
