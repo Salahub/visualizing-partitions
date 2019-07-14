@@ -17,14 +17,19 @@ part_coords <- function(partition, type = "rect",
     ## calculate useful constants
     eps. <- eps*1/n # scale the eps value appropriately
     offset <- 1/(2*n) # the offset to place the centres correctly
-    width <- (1-2*eps.)/n # the square width
+    width <- unit((1-2*eps.)/n, units = "snpc") # the square width
+    rad <- unit((1-2*eps.)/(2*n), units = "snpc") # circle radius
     ## generate the coordinates, this fills the area from 1/(2n) + eps to 1 - 1/(2n) - eps
     ## with the appropriate number of centres
     gencoords <- seq(from = offset, to = 1 - offset, by = 1/n)*(1-2*eps.) + eps.
     ## use this to generate x and y coordinates
-    ycoords <- rep(rev(gencoords), times = partition) # simply replicate appropriately
-    xcoords <- gencoords[unlist(sapply(partition, seq_len))] # more complicated, generate correct sequences for indexing
-    ## create a graphical object based on the specified type and provided arguments
-    do.call(paste0(type, "Grob"),
-            list(x = xcoords, y = ycoords, width = width, height = width, gp = params, ...))
+    ycoords <- unit(rep(rev(gencoords), times = partition), "snpc") # simply replicate appropriately
+    xcoords <- unit(gencoords[unlist(sapply(partition, seq_len))], "snpc") # more complicated, generate correct sequences for indexing
+    ## now call the relevant graphical object function
+    if (type == "rect") {
+        rectGrob(x = xcoords, y = ycoords, width = width, height = width,
+                 gp = params, ...) # must specify both with and height
+    } else if (type == "circle") {
+        circleGrob(x = xcoords, y = ycoords, r = width/2, gp = params, ...) # only radius
+    } else stop("Provided 'type' must be one of 'rect' or 'circle'")
 }

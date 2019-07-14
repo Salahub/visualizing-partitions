@@ -10,7 +10,7 @@
 draw_part <- function(partition, type = "rect", eps = 0.1,
                       params = gpar(), ...) {
     stopifnot(all(diff(partition) <= 0), all(partition %% 1 == 0),
-                  all(partition > 0)) # check that the partition is valid
+                  all(partition >= 0)) # check that the partition is valid
     grid.newpage() # create the plotting area
     grobs <- part_coords(partition, type, eps, params, ...) # create graphical object
     grid.draw(grobs) # draw the object
