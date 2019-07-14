@@ -8,10 +8,11 @@
 ##' @return a graphical object corresponding to a plot of the partition
 ##' @author Chris Salahub
 part_coords <- function(partition, type = c("circle","rectangle"),
-                        eps = 0.1, params = gpar()) {
+                        eps = 0.1, params = gpar(), ...) {
     n <- sum(partition) # the value being partitioned, needed for checks and calculations
     ## perform checks
-    stopifnot(all(partition >= 0)) # check the partition provided is valid
+    stopifnot(all(partition >= 0),
+              all(partition %% 0 == 0)) # check the partition provided is valid
     if (length(partition) < n) partition <- c(partition, rep(0, n - length(partition))) ## nice input handling
     ## calculate useful constants
     eps. <- eps*1/n # scale the eps value appropriately
@@ -24,5 +25,5 @@ part_coords <- function(partition, type = c("circle","rectangle"),
     ycoords <- rep(rev(gencoords), times = partition) # simply replicate appropriately
     xcoords <- gencoords[unlist(sapply(partition, seq_len))] # more complicated, generate correct sequences for indexing
     ## create a graphical object to be plotted later
-    rectGrob(x = xcoords, y = ycoords, width = width, height = width, gp = params)
+    rectGrob(x = xcoords, y = ycoords, width = width, height = width, gp = params, ...)
 }
