@@ -9,6 +9,13 @@
 ##' @author Chris Salahub
 draw_part <- function(partition, type = c("circle","rectangle"), eps = 0.1,
                       params = gpar(), ...) {
+    if (length(partition) == 1) {
+        stopifnot(partition > 0, partition %% 1 == 0) # check that the partition is valid
+    } 
+    else {
+        stopifnot(all(diff(partition) <= 0), all(partition %% 1 == 0), 
+                  all(partition > 0)) # check that the partition is valid
+    }
     grid.newpage() # create the plotting area
     rects <- part_coords(partition, type, eps, params, ...) # create graphical object
     grid.draw(rects) # draw the object
