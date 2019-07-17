@@ -6,7 +6,7 @@
 ##' @param eps a positive real number
 ##' @param params a list of graphical parameters to be applied to the output
 ##' @return a graphical object corresponding to a plot of the partition
-##' @author Chris Salahub
+##' @author Chris Salahub and Pavel Schuldiner
 part_coords <- function(partition, type = "rect",
                         eps = 0.1, params = gpar(), ...) {
     n <- sum(partition) # the value being partitioned, needed for checks and calculations
@@ -33,3 +33,18 @@ part_coords <- function(partition, type = "rect",
         circleGrob(x = xcoords, y = ycoords, r = width/2, gp = params, ...) # only radius
     } else stop("Provided 'type' must be one of 'rect' or 'circle'")
 }
+
+##' @title Conjugating a Partition Graphical Object
+##' @param partgrob a partition graphical object output by part_coords
+##' @return the partition conjugate of partgrob
+##' @author Chris Salahub and Pavel Schuldiner
+grob_conj <- function(partgrob) {
+    ## extract the old coordinates
+    xold <- as.numeric(partgrob$x)
+    yold <- as.numeric(partgrob$y)
+    ## reflect these in the line y = 1 - x
+    partgrob$x <- unit(1 - yold, units = "snpc")
+    partgrob$y <- unit(1 - xold, units = "snpc")
+    partgrob
+}
+
