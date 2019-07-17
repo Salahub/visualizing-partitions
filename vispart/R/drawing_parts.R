@@ -5,10 +5,11 @@
 ##' @param type one of "circle" or "rect"
 ##' @param eps a positive real number
 ##' @param params a list of graphical parameters to be applied to the output
+##' @param conj a logical value
 ##' @return a plot of the partition
-##' @author Chris Salahub
+##' @author Chris Salahub and Pavel Schuldiner
 draw_part <- function(partition, type = "rect", eps = 0.1,
-                      params = gpar(), ...) {
+                      params = gpar(), conj = FALSE, ...) {
     stopifnot(all(diff(partition) <= 0), all(partition %% 1 == 0),
                   all(partition >= 0)) # check that the partition is valid
     grid.newpage() # create the plotting area
@@ -22,7 +23,7 @@ draw_part <- function(partition, type = "rect", eps = 0.1,
 ##' @param eps a positive real number
 ##' @param params a list of graphical parameters to be applied to the output
 ##' @return a plot of all partitions of n
-##' @author Chris Salahub
+##' @author Chris Salahub and Pavel Schuldiner
 draw_all_parts <- function(n, type = "rect", eps = 0.1,
                            params = gpar()) {
     ## perform some checks
