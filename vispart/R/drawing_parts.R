@@ -15,6 +15,8 @@ draw_part <- function(partition, type = "rect", eps = 0.1,
     grid.newpage() # create the plotting area
     grobs <- part_coords(partition, type, eps, params, ...) # create graphical object
     grid.draw(grobs) # draw the object
+    grid.text(label = paste(partition[partition != 0], collapse = ","), y = 0,
+              hjust = 0.5, vjust = -0.1) # label the values
 }
 
 ##' @title Drawing All Partitions of n
@@ -46,7 +48,8 @@ draw_all_parts <- function(n, type = "rect", eps = 0.1,
     for (ii in 1:numpars) {
         pushViewport(vps[[ii]]) # go to correct coordinate scale
         grid.draw(part_coords(allpart[,ii], type, eps, params)) # draw the partition
-        ## grid.text(label = ii, y = 0, hjust = 0.5, vjust = -0.1) # label
+        grid.text(label = paste(allpart[allpart[,ii] != 0,ii], collapse = ","), y = 0,
+                  hjust = 0.5, vjust = -0.1) # label the values
         popViewport() # return to global image
     }
 }
