@@ -1,7 +1,7 @@
 \name{grob_conj}
 \title{Conjugating a Graphical Partition Object}
 \description{
-  This function conjugates a partition graphical object by relfecting
+  This function conjugates a partition graphical object by reflecting
   its coordinates in the line \eqn{y = 1-x}{y = 1-x}.
 }
 \usage{
