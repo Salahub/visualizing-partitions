@@ -15,7 +15,7 @@ draw_part <- function(partition, type = "rect", eps = 0.1,
     grobs <- part_coords(partition, type, eps, params, ...) # create graphical object
     grid.draw(grobs) # draw the object
     grid.text(label = paste(partition[partition != 0], collapse = ","), y = 0,
-              hjust = 0.5, vjust = -0.1) # label the values
+              hjust = 0.5, vjust = -eps) # label the values
 }
 
 ##' @title Drawing All Partitions of n

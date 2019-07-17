@@ -47,4 +47,3 @@ grob_conj <- function(partgrob) {
     partgrob$y <- unit(1 - xold, units = "snpc")
     partgrob
 }
-
