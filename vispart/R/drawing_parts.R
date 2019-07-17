@@ -12,7 +12,6 @@ draw_part <- function(partition, type = "rect", eps = 0.1,
                       params = gpar(), conj = FALSE, ...) {
     stopifnot(all(diff(partition) <= 0), all(partition %% 1 == 0),
                   all(partition >= 0)) # check that the partition is valid
-    grid.newpage() # create the plotting area
     grobs <- part_coords(partition, type, eps, params, ...) # create graphical object
     grid.draw(grobs) # draw the object
     grid.text(label = paste(partition[partition != 0], collapse = ","), y = 0,
@@ -27,7 +26,7 @@ draw_part <- function(partition, type = "rect", eps = 0.1,
 ##' @return a plot of all partitions of n
 ##' @author Chris Salahub and Pavel Schuldiner
 draw_all_parts <- function(n, type = "rect", eps = 0.1,
-                           params = gpar()) {
+                           params = gpar(), ...) {
     ## perform some checks
     stopifnot(n >= 0,
               n %% 1 == 0) # must be positive integer
@@ -47,9 +46,7 @@ draw_all_parts <- function(n, type = "rect", eps = 0.1,
     ## use all of this to plot the partitions
     for (ii in 1:numpars) {
         pushViewport(vps[[ii]]) # go to correct coordinate scale
-        grid.draw(part_coords(allpart[,ii], type, eps, params)) # draw the partition
-        grid.text(label = paste(allpart[allpart[,ii] != 0,ii], collapse = ","), y = 0,
-                  hjust = 0.5, vjust = -0.1) # label the values
+        draw_part(allpart[,ii], type, eps, params, ...) # draw the partition
         popViewport() # return to global image
     }
 }
