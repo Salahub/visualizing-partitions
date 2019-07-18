@@ -1,4 +1,5 @@
 ### Generating Partition Graphical Objects ###############################################
+library(grid)
 
 ##' @title Generating Partition Graphical Objects
 ##' @param partition a partition represented as a sequence of positive integers
@@ -30,7 +31,7 @@ part_coords <- function(partition, type = "rect",
         rectGrob(x = xcoords, y = ycoords, width = width, height = width,
                  gp = params, ...) # must specify both with and height
     } else if (type == "circle") {
-        circleGrob(x = xcoords, y = ycoords, r = width/2, gp = params, ...) # only radius
+        circleGrob(x = xcoords, y = ycoords, r = rad, gp = params, ...) # only radius
     } else stop("Provided 'type' must be one of 'rect' or 'circle'")
 }
 

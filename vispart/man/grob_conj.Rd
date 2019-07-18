@@ -19,8 +19,8 @@ grob_conj(partgrob)
 \author{
   Chris Salahub and Pavel Schuldiner
 }
-\references{}
 \examples{
+library(grid)
 ## generate the object for the partition c(4,1,0,0,0)
 prt <- part_coords(c(4,1,0,0,0), type = "rect", eps = 0.1)
 grid.draw(prt)

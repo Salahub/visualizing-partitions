@@ -1,5 +1,6 @@
 \name{part_coords}
 \alias{part_coords}
+\alias{grob}
 \title{Generating a Graphical Partition Object}
 \description{
   This function uses the \code{grid} package to generate a \code{grid} \code{\link{grob}} which corresponds to a given partition when drawn.
@@ -24,12 +25,13 @@ part_coords(partition, type = "rect", eps = 0.1, params = gpar(),
 \author{
   Chris Salahub and Pavel Schuldiner
 }
-\references{}
 \examples{
+library(grid)
 ## generate the object for the partition c(4,1,0,0,0)
 prt <- part_coords(c(4,1,0,0,0), type = "rect", eps = 0.1)
 grid.draw(prt)
 
 ## increase eps and change the type to circles
 prt2 <- part_coords(c(4,1,0,0,0), type = "circle", eps = 0.5)
+grid.draw(prt2)
 }

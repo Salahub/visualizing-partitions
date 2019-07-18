@@ -15,6 +15,7 @@ draw_all_parts(n, type = "rect", eps = 0.1, params = gpar(), ...)
   \item{type}{one of "rect" or "circle", the shape of the \code{\link{grob}} elements used to represent the partition}
   \item{eps}{numeric number less than one which specifies the empty buffer distance placed around the partition}
   \item{params}{a \code{\link{list}} of graphical parameters to be passed to the \code{\link{grob}} creation function}
+  \item{conj}{a logical indicating whether the plotted result should be the partition or its conjugate}
   \item{\dots}{additional arguments passed to the \code{\link{grob}} creation function}
 }
 \value{
@@ -26,7 +27,6 @@ These functions display partitions.
 \author{
   Chris Salahub and Pavel Schuldiner
 }
-\references{}
 \examples{
 ## display the partition c(4,1,0,0,0)
 draw_part(c(4,1,0,0,0), type = "rect", eps = 0.1)

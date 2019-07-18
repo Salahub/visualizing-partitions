@@ -1,3 +1,4 @@
-import("grid", "partitions")
+importFrom("grid", "grid.draw", "rectGrob", "circleGrob", "grid.text", "grid.newpage", "pushViewport", "popViewport", "unit", "gpar", "viewport")
+importFrom("partitions", "parts")
 
 export("draw_all_parts", "draw_part", "part_coords", "grob_conj")

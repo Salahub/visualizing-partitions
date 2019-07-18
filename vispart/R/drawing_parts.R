@@ -1,4 +1,6 @@
 ### Drawing Partitions from Graphical Objects ############################################
+library(grid)
+library(partitions)
 
 ##' @title Drawing a Single Partition
 ##' @param partition a partition represented as a sequence of positive integers
