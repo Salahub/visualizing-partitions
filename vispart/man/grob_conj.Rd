@@ -1,22 +1,20 @@
 \name{grob_conj}
+\alias{grob_conj}
 \title{Conjugating a Graphical Partition Object}
 \description{
-  This function conjugates a partition graphical object by reflecting
-  its coordinates in the line \eqn{y = 1-x}{y = 1-x}.
+  This function conjugates a partition graphical object by reflecting its coordinates in the line \eqn{y = 1-x}{y = 1-x}.
 }
 \usage{
 grob_conj(partgrob)
 }
 \arguments{
-  \item{partgrob} a graphical partition object as output by
-  \code{\link{part_coords}}
+  \item{partgrob}{a graphical partition object as output by \code{\link{part_coords}}}
 }
 \value{
   a \code{grid} \code{\link{grob}} (graphical object)
 }
 \details{
-  This function conjugates a partition graphical object by reflecting
-  its coordinates in the line \eqn{y = 1-x}{y = 1-x}.
+  This function conjugates a partition graphical object by reflecting its coordinates in the line \eqn{y = 1-x}{y = 1-x}.
 }
 \author{
   Chris Salahub and Pavel Schuldiner

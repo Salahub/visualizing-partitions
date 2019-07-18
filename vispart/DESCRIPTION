@@ -13,5 +13,4 @@ Suggests:
 Enhances: partitions
 License: GPL (>= 3) | file LICENCE
 NeedsCompilation: no
-VignetteBuilder: knitr
 Repository: CRAN

@@ -1,3 +1,3 @@
 import("grid", "partitions")
 
-export("draw_all_parts", "draw_part", "part_coords")
+export("draw_all_parts", "draw_part", "part_coords", "grob_conj")
