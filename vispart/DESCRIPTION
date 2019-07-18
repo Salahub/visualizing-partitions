@@ -5,8 +5,8 @@ Title: Visualizing Partitions of Natural Numbers
 Description: A package which generates grid grobs (graphical objects) corresponding to the partitions of natural numbers and provides functionality to plot these partitions either one at a time or all at once. Helper functions which generate the conjugate partition graphical object are also provided.
 Authors@R: c(person(given = "Pavel", family = "Schuldiner", role = c("aut"), email = "pavel.shuldiner@uwaterloo.ca"),
 	     person(given = "Chris", family = "Salahub", role = c("aut","cre"), email = "csalahub@uwaterloo.ca"))
-Author: Chris Salahub [aut,cre], Pavel Schuldiner [aut]
-Maintainer: Chris Salahub <csaahub@uwaterloo.ca>
+Author: Pavel Schuldiner [aut], Chris Salahub [aut,cre]
+Maintainer: Chris Salahub <csalahub@uwaterloo.ca>
 Depends: R (>= 3.6.0)
 Imports: grid, partitions
 Suggests:
