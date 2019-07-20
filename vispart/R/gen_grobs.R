@@ -8,7 +8,7 @@ library(grid)
 ##' @param params a list of graphical parameters to be applied to the output
 ##' @return a graphical object corresponding to a plot of the partition
 ##' @author Chris Salahub and Pavel Schuldiner
-part_coords <- function(partition, type = "rect",
+part_coords <- function(partition, type = "rect", coloursq = FALSE,
                         eps = 0.1, params = gpar(), ...) {
     n <- sum(partition) # the value being partitioned, needed for checks and calculations
     ## perform checks
@@ -24,14 +24,21 @@ part_coords <- function(partition, type = "rect",
     ## with the appropriate number of centres
     gencoords <- seq(from = offset, to = 1 - offset, by = 1/n)*(1-2*eps.) + eps.
     ## use this to generate x and y coordinates
-    ycoords <- unit(rep(rev(gencoords), times = partition), "snpc") # simply replicate appropriately
-    xcoords <- unit(gencoords[unlist(sapply(partition, seq_len))], "snpc") # more complicated, generate correct sequences for indexing
+    ycoords <- rep(rev(gencoords), times = partition) # replicate the y values appropriately
+    xcoords <- gencoords[unlist(sapply(partition, seq_len))] # more complicated, generate correct indices
+    ## if we want to colour the largest square, identify elements and shade them
+    if (coloursq) {
+        sqcorner <- max(which(abs(xcoords + ycoords - 1) < n*.Machine$double.eps)) # identify the largest value on 1-y=x
+        cornerinds <- ycoords >= ycoords[sqcorner] & xcoords <= xcoords[sqcorner] # take the corner above this
+        params$fill[cornerinds] <- adjustcolor("firebrick", alpha.f = 0.4) # colour the corresponding elements
+    }
     ## now call the relevant graphical object function
     if (type == "rect") {
-        rectGrob(x = xcoords, y = ycoords, width = width, height = width,
-                 gp = params, ...) # must specify both with and height
+        rectGrob(x = unit(xcoords, "snpc"), y = unit(ycoords, "snpc"), width = width,
+                 height = width, gp = params, ...) # must specify both with and height
     } else if (type == "circle") {
-        circleGrob(x = xcoords, y = ycoords, r = rad, gp = params, ...) # only radius
+        circleGrob(x = unit(xcoords, "snpc"), y = unit(ycoords, "snpc"), r = rad,
+                   gp = params, ...) # only radius
     } else stop("Provided 'type' must be one of 'rect' or 'circle'")
 }
 
