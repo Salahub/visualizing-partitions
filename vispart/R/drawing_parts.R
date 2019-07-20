@@ -15,6 +15,7 @@ draw_part <- function(partition, type = "rect", eps = 0.1,
     stopifnot(all(diff(partition) <= 0), all(partition %% 1 == 0),
                   all(partition >= 0)) # check that the partition is valid
     grobs <- part_coords(partition, type, eps, params, ...) # create graphical object
+    if (identical(parent.frame(), .GlobalEnv)) grid.newpage() # flush display if this is called directly
     grid.draw(grobs) # draw the object
     grid.text(label = paste(partition[partition != 0], collapse = ","), y = 0,
               hjust = 0.5, vjust = -eps) # label the values
