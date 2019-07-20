@@ -28,8 +28,10 @@ part_coords <- function(partition, type = "rect", coloursq = FALSE,
     xcoords <- gencoords[unlist(sapply(partition, seq_len))] # more complicated, generate correct indices
     ## if we want to colour the largest square, identify elements and shade them
     if (coloursq) {
-        sqcorner <- max(which(abs(xcoords + ycoords - 1) < n*.Machine$double.eps)) # identify the largest value on 1-y=x
-        cornerinds <- ycoords >= ycoords[sqcorner] & xcoords <= xcoords[sqcorner] # take the corner above this
+        sqcorner <- max(which(partition >= 1:length(partition))) # find the corner
+        cornerinds <- xcoords <= gencoords[sqcorner] & ycoords >= rev(gencoords)[sqcorner] # use this to get the square
+        ##sqcorner <- max(which(abs(xcoords + ycoords - 1) < 3*.Machine$double.eps)) # identify the largest value on 1-y=x
+        ##cornerinds <- ycoords >= ycoords[sqcorner] & xcoords <= xcoords[sqcorner] # take the corner above this
         params$fill[cornerinds] <- adjustcolor("firebrick", alpha.f = 0.4) # colour the corresponding elements
     }
     ## now call the relevant graphical object function
