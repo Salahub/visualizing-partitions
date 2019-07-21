@@ -8,8 +8,8 @@ library(grid)
 ##' @param params a list of graphical parameters to be applied to the output
 ##' @return a graphical object corresponding to a plot of the partition
 ##' @author Chris Salahub and Pavel Schuldiner
-part_coords <- function(partition, type = "rect", coloursq = FALSE,
-                        eps = 0.1, params = gpar(), ...) {
+part_coords <- function(partition, type = "rect", eps = 0.1,
+                        coloursq = FALSE, params = gpar(), ...) {
     n <- sum(partition) # the value being partitioned, needed for checks and calculations
     ## perform checks
     stopifnot(all(partition >= 0),
