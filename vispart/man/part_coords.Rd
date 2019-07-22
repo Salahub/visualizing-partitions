@@ -6,7 +6,7 @@
   This function uses the \code{grid} package to generate a \code{grid} \code{\link{grob}} which corresponds to a given partition when drawn.
 }
 \usage{
-part_coords(partition, type = "rect", eps = 0.1, params = gpar(), ...)
+part_coords(partition, type = "rect", eps = 0.1, coloursq = FALSE, params = gpar(), ...)
 }
 \arguments{
   \item{partition}{an ordered \code{\link{vector}} of non-negative integers representing a partition}

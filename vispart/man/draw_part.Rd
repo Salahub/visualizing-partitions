@@ -6,8 +6,8 @@
 This family of functions is used to display partitions graphically. The function \code{draw_part} draws a single partition given a vector of non-negative integers, while the function \code{draw_all_parts} draws all partitions of a non-negative integer \eqn{n}{n} on the same graphical device.
 }
 \usage{
-draw_part(partition, type = "rect", eps = 0.1, params = gpar(), conj = FALSE, ...)
-draw_all_parts(n, type = "rect", eps = 0.1, params = gpar(), ...)
+draw_part(partition, type = "rect", eps = 0.1, params = gpar(), coloursq = FALSE, conj = FALSE, ...)
+draw_all_parts(n, type = "rect", eps = 0.1, coloursq = FALSE, params = gpar(), ...)
 }
 \arguments{
  \item{partition}{an ordered \code{\link{vector}} of non-negative integers representing a partition}
