@@ -14,15 +14,19 @@ draw_all_parts(n, type = "rect", eps = 0.1, params = gpar(), ...)
   \item{n}{a non-negative integer to be partitioned}
   \item{type}{one of "rect" or "circle", the shape of the \code{\link{grob}} elements used to represent the partition}
   \item{eps}{numeric number less than one which specifies the empty buffer distance placed around the partition}
-  \item{params}{a \code{\link{list}} of graphical parameters to be passed to the \code{\link{grob}} creation function}
-  \item{conj}{a logical indicating whether the plotted result should be the partition or its conjugate}
+  \item{coloursq} {logical indicating whether the largest square of the partition should be shaded in red}
+  \item{params}{named \code{\link{list}} of graphical parameters to be passed to the \code{\link{grob}} creation function}
+  \item{conj}{logical indicating whether the plotted result should be the partition or its conjugate}
   \item{\dots}{additional arguments passed to the \code{\link{grob}} creation function}
 }
 \value{
   displays the partition(s) specified
 }
 \details{
-These functions display partitions.
+These functions display partitions. They are essentially high-level wrappers for the \code{\link{part_coords}} function which specify viewport characteristics, perform error handling, and automatically draw the generated partition graphical object.
+}
+\references{
+  Yong, Alexander. (2007). \emph{What is a young tableau}. Notices of the AMS 54.2: 240-241.
 }
 \author{
   Chris Salahub and Pavel Schuldiner
