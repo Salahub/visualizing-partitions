@@ -14,7 +14,7 @@ draw_all_parts(n, type = "rect", eps = 0.1, params = gpar(), ...)
   \item{n}{a non-negative integer to be partitioned}
   \item{type}{one of "rect" or "circle", the shape of the \code{\link{grob}} elements used to represent the partition}
   \item{eps}{numeric number less than one which specifies the empty buffer distance placed around the partition}
-  \item{coloursq} {logical indicating whether the largest square of the partition should be shaded in red}
+  \item{coloursq}{logical indicating whether the largest square of the partition should be shaded in red}
   \item{params}{named \code{\link{list}} of graphical parameters to be passed to the \code{\link{grob}} creation function}
   \item{conj}{logical indicating whether the plotted result should be the partition or its conjugate}
   \item{\dots}{additional arguments passed to the \code{\link{grob}} creation function}

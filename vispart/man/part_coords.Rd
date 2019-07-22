@@ -12,7 +12,7 @@ part_coords(partition, type = "rect", eps = 0.1, params = gpar(), ...)
   \item{partition}{an ordered \code{\link{vector}} of non-negative integers representing a partition}
   \item{type}{one of "rect" or "circle", the shape of the \code{\link{grob}} elements used to represent the partition}
   \item{eps}{numeric number less than one which specifies the empty buffer distance placed around the partition}
-  \item{coloursq} {logical value indicating whether the largest square of the partition should be shaded in red}
+  \item{coloursq}{logical value indicating whether the largest square of the partition should be shaded in red}
   \item{params}{a named \code{\link{list}} of graphical parameters to be passed to the \code{\link{grob}} creation function}
   \item{\dots}{additional arguments passed to the \code{\link{grob}} creation function}
 }
