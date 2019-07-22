@@ -183,7 +183,7 @@ $$P(q) = \prod_{i\geq 1} \frac{1}{1-q^i} = \sum_{k\geq1}q^{k^2}\prod_{i=1}^{k}\f
 \begin{frame}
 \frametitle{Dufree square example}
 \centering
-\includegraphics[width=0.5\textwidth]{LargestSquare}	
+\includegraphics[scale = 0.55]{dufree.png}	
 \end{frame}
 
  
@@ -192,9 +192,9 @@ $$P(q) = \prod_{i\geq 1} \frac{1}{1-q^i} = \sum_{k\geq1}q^{k^2}\prod_{i=1}^{k}\f
 \begin{definition}
 We say that a partition is self-conjugate partition if its reflection in $y = -x$ line is itself.	
 \end{definition}
-\begin{figure}
-\includegraphics[scale = 0.6]{SelfConjugate}
-\end{figure}
+
+\centering
+\includegraphics[scale = 0.25]{self_conjugate_with_line.png}
 \end{frame}  
 
 \begin{frame}
@@ -212,16 +212,16 @@ $$S(q) := \sum_{n\geq 0}s(n)q^n = \prod_{i\geq 0}(1+q^{2i+1}).$$
 %\includegraphics[width=0.5\textwidth]{DistinctOdd}
 \begin{figure}
      \centering
-     \begin{subfigure}[b]{0.4\textwidth}
+     \begin{subfigure}[b]{0.25\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{SelfConjugate}
+         \includegraphics[width=\textwidth]{self_conjugate_colored.png}
 %         \caption{$y=x$}
 %         \label{fig:y equals x}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.5\textwidth}
          \centering
-         \includegraphics[width=\textwidth]{DistinctOdd}
+         \includegraphics[width=\textwidth]{odd_distinct_colored.png}
 %         \caption{$y=3sinx$}
 %         \label{fig:three sin x}
      \end{subfigure}
@@ -243,7 +243,7 @@ Our package allows one to
 \begin{itemize}
 \item Draw any integer partition.
 \begin{itemize}
-\item Using either Ferrers diagrams or Young tableaux.
+\item Using either Ferrers or Young diagram.
 \item Colour specific boxes; helps communicate specific properties of partitions.
 \item Conjugation mapping is builtin.
 \end{itemize}
@@ -280,14 +280,14 @@ In contrast to \texttt{vispart},
 Improvements to the integer partition list generation.
 \begin{itemize}
 	\item Currently, \texttt{partitions} uses a recursive algorithm which relies on the recurrence:
-	$$p(n,m) = \sum_{k=1}^{m}p(n-k, k).$$
+	$$p(n,m) = \sum_{k=1}^{m}p(n-k, k),$$
+	where $p(n,m)$ is the number of partitions of $n$ in which all parts are of size at most $m$.
 	\item This algorithm is known to have $O(n\log n)$ time complexity and $O(n^2)$ space complexity.
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-	In the study of symmetric functions, interest lies in assigning numbers within the boxes of a Young tableau.
-
+	In the study of symmetric functions, interest lies in assigning numbers within the boxes of a Young diagram in a way that satisfy a particular rule. Such configurations are known as \textbf{Young tableaux}.
 \begin{itemize}
 \frametitle{Future work - math}
 \item This helps communicate concepts from the theory of irreducible representations of the symmetric group $S_n$.
@@ -301,7 +301,7 @@ Improvements to the integer partition list generation.
 \begin{frame}
 	\frametitle{That's all folks!}
 	\centering
-\includegraphics[scale = 0.4]{LooneyTunes}
+\includegraphics[scale = 0.4]{LooneyTunes.jpg}
 \end{frame}
 
 \end{document}
