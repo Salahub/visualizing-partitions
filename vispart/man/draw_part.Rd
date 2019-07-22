@@ -17,6 +17,7 @@ draw_all_parts(n, type = "rect", eps = 0.1, coloursq = FALSE, params = gpar(), .
   \item{coloursq}{logical indicating whether the largest square of the partition should be shaded in red}
   \item{params}{named \code{\link{list}} of graphical parameters to be passed to the \code{\link{grob}} creation function}
   \item{conj}{logical indicating whether the plotted result should be the partition or its conjugate}
+  \item{label}{logical indicating whether to label the partition}
   \item{\dots}{additional arguments passed to the \code{\link{grob}} creation function}
 }
 \value{

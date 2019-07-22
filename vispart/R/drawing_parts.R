@@ -19,6 +19,7 @@ draw_part <- function(partition, type = "rect", eps = 0.1, coloursq = FALSE,
     grobs <- part_coords(partition = partition, type = type, eps = eps,
                          coloursq = coloursq, params = params, ...) # create graphical object
     if (identical(parent.frame(), .GlobalEnv)) grid.newpage() # flush display if this is called directly
+    if (conj) grobs <- grob_conj(grobs) # plot the conjugate if that is desired
     grid.draw(grobs) # draw the object
     # To include or not include labels
     if (label) {
