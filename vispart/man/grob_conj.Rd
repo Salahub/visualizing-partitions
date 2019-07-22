@@ -14,7 +14,7 @@ grob_conj(partgrob)
   a \code{grid} \code{\link{grob}} (graphical object)
 }
 \details{
-  This function conjugates a partition graphical object by reflecting its coordinates in the line \eqn{y = 1-x}{y = 1-x}.
+  This function creates the conjugate partition graphical object of the provided partition graphical object by taking \eqn{x = 1 -y}{x_{new} = 1-y} and \eqn{y = 1 - x}{y_{new} = 1 - x}.
 }
 \author{
   Chris Salahub and Pavel Schuldiner

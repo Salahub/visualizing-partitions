@@ -5,6 +5,7 @@ library(grid)
 ##' @param partition a partition represented as a sequence of positive integers
 ##' @param type one of "circle" or "rectangle"
 ##' @param eps a positive real number
+##' @param coloursq a logical indicating whether the to colour the largest square
 ##' @param params a list of graphical parameters to be applied to the output
 ##' @return a graphical object corresponding to a plot of the partition
 ##' @author Chris Salahub and Pavel Schuldiner

@@ -6,6 +6,7 @@ library(partitions)
 ##' @param partition a partition represented as a sequence of positive integers
 ##' @param type one of "circle" or "rect"
 ##' @param eps a positive real number
+##' @param coloursq a logical indicating whether the to colour the largest square
 ##' @param params a list of graphical parameters to be applied to the output
 ##' @param conj a logical value
 ##' @return a plot of the partition
@@ -25,6 +26,7 @@ draw_part <- function(partition, type = "rect", eps = 0.1, coloursq = FALSE,
 ##' @param n a positive integer to be partitioned and displayed
 ##' @param type one of "cicle" or "rect"
 ##' @param eps a positive real number
+##' @param coloursq a logical indicating whether the to colour the largest square
 ##' @param params a list of graphical parameters to be applied to the output
 ##' @return a plot of all partitions of n
 ##' @author Chris Salahub and Pavel Schuldiner
