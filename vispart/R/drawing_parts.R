@@ -15,7 +15,8 @@ draw_part <- function(partition, type = "rect", eps = 0.1, coloursq = FALSE,
                       params = gpar(), conj = FALSE, ...) {
     stopifnot(all(diff(partition) <= 0), all(partition %% 1 == 0),
                   all(partition >= 0)) # check that the partition is valid
-    grobs <- part_coords(partition, type, eps, coloursq, params, ...) # create graphical object
+    grobs <- part_coords(partition = partition, type = type, eps = eps,
+                         coloursq = coloursq, params = params, ...) # create graphical object
     if (identical(parent.frame(), .GlobalEnv)) grid.newpage() # flush display if this is called directly
     grid.draw(grobs) # draw the object
     grid.text(label = paste(partition[partition != 0], collapse = ","), y = 0,
@@ -51,7 +52,8 @@ draw_all_parts <- function(n, type = "rect", eps = 0.1, coloursq = FALSE,
     ## use all of this to plot the partitions
     for (ii in 1:numpars) {
         pushViewport(vps[[ii]]) # go to correct coordinate scale
-        draw_part(allpart[,ii], type, eps, coloursq, params, ...) # draw the partition
+        draw_part(partition = allpart[,ii], type = type, eps = eps,
+                  coloursq = coloursq, params = params, ...) # draw the partition
         popViewport() # return to global image
     }
 }
