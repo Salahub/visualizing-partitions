@@ -2,7 +2,9 @@
 \usepackage{youngtab}
 \usepackage{verbatim}
 \usepackage{graphicx}
-\usepackage{subscaption}
+%\usepackage{subscaption}
+\usepackage{caption}
+\usepackage{subcaption}
 
 \usetheme{boxes}
 \usepackage{tikz}
@@ -36,7 +38,7 @@
 			\end{center}
 	}
 \title{Visualizing Integer Partitions}
-\author[Salahub]{Chris Salahub}
+\author[Salahub]{Chris Salahub \quad Pavel Shuldiner}
 \institute[UW]{University of Waterloo}
 
 \begin{document}
@@ -44,11 +46,10 @@
 \frame{\titlepage}
 
 \frame{\frametitle{Presentation Outline}
-We study congruence properties of the partition function. 
 \begin{enumerate}
 \item What are partitions? Objects from combinatorics, number theory, representation theory and physics.
-\item Why do we care? \textbf{Generating functions, useful analytic identities, building blocks for counting discrete objects}.
-\item How do we visualize them? \texttt{vispart}
+\item Why do we care? Help us study generating functions, derive useful analytic identities, and are building blocks for counting discrete objects.
+\item How do we visualize them? \texttt{vispart}.
 \item Future work. 
 \end{enumerate}
 }
@@ -60,7 +61,7 @@ $$|\lambda|=\lambda_1+\lambda_2+\dotsb+\lambda_k = n.$$
 We let $p(n)$ denote the total number of partitions of $n$, where we use the convention $p(0)=1$ and $p(n)=0$ for $n$ negative. 
 }
 
-\begin{frame}{The partitions of 4}
+\begin{frame}{Example: partitions of 4}
 We note that $p(4) =5$ by enumerating the partitions of 4: 
 \begin{align*}
 4 &= 4\\
@@ -76,7 +77,7 @@ We see that there is only one partition with a single part: (4), two partitions 
 
 
 \begin{frame} 
-\frametitle{Ferrers Diagrams}
+\frametitle{Visualizing integer partitions}
 We can represents integer partitions geometrically using Ferrers diagrams,
 \begin{center}
 \begin{tikzpicture}
@@ -128,12 +129,11 @@ Or by using Young diagrams
 
 $$\yng(4)\qquad \yng(3,1) \qquad \yng(2,2) \qquad \yng(2,1,1) \qquad \yng(1,1,1,1)$$
 
-An alternative way of thinking of partitions is using an algebraic tool.
-\end{frame}
+An alternative way of thinking of partitions is algebraic via formal power series.\end{frame}
 \begin{frame}
 \frametitle{Formal power series}
 In general, we say that a sequence $(a_n)_{n\geq 0}$ has generating series $A(q)\in \nats[[q]]$ if $$A(q) = \sum_{n\geq 0}a_nq^n,$$
-where the variable $x$ is variable only in the formal sense (usual algebraic properties hold, nothing analytic).
+where the variable $q$ is variable only in the formal sense (usual algebraic properties like addition, multiplication and formal derivatives and integrals hold).
 
 \end{frame}
 
@@ -152,14 +152,14 @@ represents the number of ways we could pick no parts of size $i$, the number of 
 
 \begin{frame}
   \frametitle{Applications}
-  The benefits of being able to visualize integer partitions are apparent when considering how many theorems can be proved using them.
+  The benefits of being able to visualize integer partitions are apparent when considering how many theorems can be proved by visualization.
 \end{frame}
 
 \begin{frame}
 	\frametitle{Dufree squares}
 \begin{theorem}
 The generating series for integer partitions is equivalent to
-$$P(q) = \prod_{i\geq 1} \frac{1}{1-q^i} = \sum_{k\geq1}x^{k^2}\prod_{i=1}^{k}\frac{1}{(1-q^i)^2}.$$	
+$$P(q) = \prod_{i\geq 1} \frac{1}{1-q^i} = \sum_{k\geq1}q^{k^2}\prod_{i=1}^{k}\frac{1}{(1-q^i)^2}.$$	
 \end{theorem}
 
 \begin{proof}
@@ -179,21 +179,55 @@ $$P(q) = \prod_{i\geq 1} \frac{1}{1-q^i} = \sum_{k\geq1}x^{k^2}\prod_{i=1}^{k}\f
 \end{center}
 \end{proof}
 \end{frame}
+
+\begin{frame}
+\frametitle{Dufree square example}
+\centering
+\includegraphics[width=0.5\textwidth]{LargestSquare}	
+\end{frame}
+
  
 \begin{frame}
 	\frametitle{Self-conjugate partitions}
 \begin{definition}
 We say that a partition is self-conjugate partition if its reflection in $y = -x$ line is itself.	
 \end{definition}
-
-\begin{theorem}
-The set of self-conjugate partitions is in bijection with the set of all partitions with distinct odd parts. In particular, if $s(n)$ is the number of self conjugate partitions of $n$, then
-$$\sum_{n\geq 0}s(n)q^n = \prod_{i\geq 0}(1+q^{2i+1}).$$
-\end{theorem}
+\begin{figure}
+\includegraphics[scale = 0.6]{SelfConjugate}
+\end{figure}
 \end{frame}  
 
 \begin{frame}
 \frametitle{Self-conjugate partitions}
+\begin{theorem}
+The set of self-conjugate partitions is in bijection with the set of all partitions with distinct odd parts. In particular, if $s(n)$ is the number of self conjugate partitions of $n$, then
+$$S(q) := \sum_{n\geq 0}s(n)q^n = \prod_{i\geq 0}(1+q^{2i+1}).$$
+\end{theorem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Self-conjugate partitions becomes odd with distinct parts}
+
+%\includegraphics[width=0.5\textwidth, scale = 0.5]{SelfConjugate}%
+%\includegraphics[width=0.5\textwidth]{DistinctOdd}
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.4\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{SelfConjugate}
+%         \caption{$y=x$}
+%         \label{fig:y equals x}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.5\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{DistinctOdd}
+%         \caption{$y=3sinx$}
+%         \label{fig:three sin x}
+     \end{subfigure}
+        \caption{A self-conjugate partition with its corresponding image}
+        \label{fig:three graphs}
+\end{figure}
 
 \end{frame}
 
@@ -209,25 +243,32 @@ Our package allows one to
 \begin{itemize}
 \item Draw any integer partition.
 \begin{itemize}
-\item Using either Ferrers diagrams or Young tableaux
+\item Using either Ferrers diagrams or Young tableaux.
 \item Colour specific boxes; helps communicate specific properties of partitions.
 \item Conjugation mapping is builtin.
 \end{itemize}
 \item Draw all integer partitions of $n$ for a fixed $n$.
 \end{itemize}
 
-\TODO{Demonstration with partitions of 4}
 
 \end{frame}
+\begin{frame}
+\frametitle{The partitions of 5}
+\begin{figure}
+\includegraphics[scale = 0.4]{Partitions5}	
+\end{figure}
+\end{frame}
+
+
 
 \begin{frame}
-\frametitle{Benefits of \texttt{vispart}}	
-The benefits of \texttt{vispart} are as follows:
+\frametitle{Alternatives to \texttt{vispart}}
 
+In contrast to \texttt{vispart},
 \begin{itemize}
-	\item LaTeX's difficult to use for creating multiple partitions diagrams at once as LaTeX is generally not used for computation.
-	\item To our knowledge, there is no implementation of the operation of conjugation within LaTeX.
 	\item LaTeX's implementation of the partition diagrams does not do input handling.
+	\item LaTeX is difficult to use for creating multiple partitions diagrams at once as LaTeX is generally not used for computation.
+	\item To our knowledge, there is no implementation of the operation of conjugation within LaTeX.
 	\item Maple, Matlab, Mathematica do not have built-in functionality for visualizing them to the best of our knowledge.
 \end{itemize}
 \end{frame}
@@ -235,12 +276,6 @@ The benefits of \texttt{vispart} are as follows:
 
 \begin{frame}
 \frametitle{Future work}	
-In the study of symmetric functions, interest lies in assigning numbers within the boxes of a Young tableau.
-
-\begin{itemize}
-\item This helps communicate concepts from the theory of irreducible representations of the symmetric group $S_n$.
-\item Provides an interpretation for \textbf{Littlewood-Richardson rule} which describes how to take a product of symmetric functions.
-\end{itemize}
 
 Improvements to the integer partition list generation.
 \begin{itemize}
@@ -248,6 +283,25 @@ Improvements to the integer partition list generation.
 	$$p(n,m) = \sum_{k=1}^{m}p(n-k, k).$$
 	\item This algorithm is known to have $O(n\log n)$ time complexity and $O(n^2)$ space complexity.
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+	In the study of symmetric functions, interest lies in assigning numbers within the boxes of a Young tableau.
+
+\begin{itemize}
+\frametitle{Future work - math}
+\item This helps communicate concepts from the theory of irreducible representations of the symmetric group $S_n$.
+\item Provides an interpretation for \textbf{Littlewood-Richardson rule} which describes how to take a product of symmetric functions.
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+	\frametitle{That's all folks!}
+	\centering
+\includegraphics[scale = 0.4]{LooneyTunes}
 \end{frame}
 
 \end{document}
