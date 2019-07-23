@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.7.21)  22 JUL 2019 19:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.7.22)  23 JUL 2019 09:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -781,92 +781,139 @@ Package caption Info: End \AtBeginDocument code.
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
 
-]
-LaTeX Font Info:    Try loading font information for U+msa on input line 62.
- (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 62.
- (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input line 62.
- (/usr/local/texlive/2019/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
-File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/mathkerncmss.
-) [3
+] [3
 
 ] [4
 
-]
-Package youngtab: box1 not free! Expect an error!
-[5
+] [5
 
 ] [6
 
-] [7
+]
+LaTeX Font Info:    Try loading font information for U+msa on input line 63.
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 63.
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input line 63.
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
+File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/mathkerncmss.
+) [7
 
 ] [8
 
-]
-Overfull \vbox (8.7903pt too high) detected at line 181
- []
+] [9
 
-[9
+] [10
 
-]
-<dufree.png, id=256, 414.54875pt x 413.545pt>
-File: dufree.png Graphic file (type png)
-<use dufree.png>
-Package pdftex.def Info: dufree.png  used on input line 187.
-(pdftex.def)             Requested size: 228.0025pt x 227.45044pt.
- [10
+] [11
 
- <./dufree.png>]
-<self_conjugate_with_line.png, id=284, 588.1975pt x 592.2125pt>
-File: self_conjugate_with_line.png Graphic file (type png)
-<use self_conjugate_with_line.png>
-Package pdftex.def Info: self_conjugate_with_line.png  used on input line 199.
-(pdftex.def)             Requested size: 147.04901pt x 148.05275pt.
- [11
+] [12
 
- <./self_conjugate_with_line.png>] [12
+] [13
 
-]
-<self_conjugate_colored.png, id=345, 292.09125pt x 292.09125pt>
-File: self_conjugate_colored.png Graphic file (type png)
-<use self_conjugate_colored.png>
-Package pdftex.def Info: self_conjugate_colored.png  used on input line 233.
-(pdftex.def)             Requested size: 76.82246pt x 76.81995pt.
-<odd_distinct_colored.png, id=346, 525.965pt x 151.56625pt>
-File: odd_distinct_colored.png Graphic file (type png)
-<use odd_distinct_colored.png>
-Package pdftex.def Info: odd_distinct_colored.png  used on input line 233.
-(pdftex.def)             Requested size: 153.64493pt x 44.27455pt.
- [13
+] [14
 
- <./self_conjugate_colored.png> <./odd_distinct_colored.png>] [14
+] [15
 
-]
-<Partitions5.pdf, id=404, 505.89pt x 505.89pt>
-File: Partitions5.pdf Graphic file (type pdf)
-<use Partitions5.pdf>
-Package pdftex.def Info: Partitions5.pdf  used on input line 261.
-(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
- [15
-
- <./Partitions5.pdf>] [16
+] [16
 
 ] [17
 
 ] [18
 
+] [19
+
+] [20
+
+] [21
+
+] [22
+
+] [23
+
+] [24
+
+] [25
+
 ]
-<LooneyTunes.jpg, id=511, 602.25pt x 487.8225pt>
+<dufree.png, id=665, 414.54875pt x 413.545pt>
+File: dufree.png Graphic file (type png)
+<use dufree.png>
+Package pdftex.def Info: dufree.png  used on input line 196.
+(pdftex.def)             Requested size: 228.0025pt x 227.45044pt.
+ [26
+
+ <./dufree.png>]
+<self_conjugate_with_line.png, id=693, 588.1975pt x 592.2125pt>
+File: self_conjugate_with_line.png Graphic file (type png)
+<use self_conjugate_with_line.png>
+Package pdftex.def Info: self_conjugate_with_line.png  used on input line 208.
+(pdftex.def)             Requested size: 147.04901pt x 148.05275pt.
+ [27
+
+ <./self_conjugate_with_line.png>] [28
+
+]
+<self_conjugate_colored.png, id=754, 292.09125pt x 292.09125pt>
+File: self_conjugate_colored.png Graphic file (type png)
+<use self_conjugate_colored.png>
+Package pdftex.def Info: self_conjugate_colored.png  used on input line 242.
+(pdftex.def)             Requested size: 76.82246pt x 76.81995pt.
+<odd_distinct_colored.png, id=755, 525.965pt x 151.56625pt>
+File: odd_distinct_colored.png Graphic file (type png)
+<use odd_distinct_colored.png>
+Package pdftex.def Info: odd_distinct_colored.png  used on input line 242.
+(pdftex.def)             Requested size: 153.64493pt x 44.27455pt.
+ [29
+
+ <./self_conjugate_colored.png> <./odd_distinct_colored.png>]
+File: self_conjugate_colored.png Graphic file (type png)
+<use self_conjugate_colored.png>
+Package pdftex.def Info: self_conjugate_colored.png  used on input line 242.
+(pdftex.def)             Requested size: 76.82246pt x 76.81995pt.
+File: odd_distinct_colored.png Graphic file (type png)
+<use odd_distinct_colored.png>
+Package pdftex.def Info: odd_distinct_colored.png  used on input line 242.
+(pdftex.def)             Requested size: 153.64493pt x 44.27455pt.
+ [30
+
+] [31
+
+] [32
+
+] [33
+
+] [34
+
+] [35
+
+] [36
+
+]
+<Partitions5.pdf, id=965, 505.89pt x 505.89pt>
+File: Partitions5.pdf Graphic file (type pdf)
+<use Partitions5.pdf>
+Package pdftex.def Info: Partitions5.pdf  used on input line 271.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [37
+
+ <./Partitions5.pdf>] [38
+
+] [39
+
+] [40
+
+]
+<LooneyTunes.jpg, id=1072, 602.25pt x 487.8225pt>
 File: LooneyTunes.jpg Graphic file (type jpg)
 <use LooneyTunes.jpg>
-Package pdftex.def Info: LooneyTunes.jpg  used on input line 306.
+Package pdftex.def Info: LooneyTunes.jpg  used on input line 316.
 (pdftex.def)             Requested size: 240.89572pt x 195.12553pt.
- [19
+ [41
 
  <./LooneyTunes.jpg>]
 \tf@nav=\write6
@@ -878,27 +925,27 @@ Package pdftex.def Info: LooneyTunes.jpg  used on input line 306.
 \tf@snm=\write8
 \openout8 = `"Visualizing partitions.snm"'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 308.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 308.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 318.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 318.
  (/Users/pavelshuldiner/visualizing-partitions/vispart_slides/.texpadtmp/Visualizing partitions.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 308.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 308.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 318.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 318.
 Package rerunfilecheck Info: File `"Visualizing partitions".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 22080 strings out of 492609
- 442241 string characters out of 6129048
- 515762 words of memory out of 5000000
- 25482 multiletter control sequences out of 15000+600000
- 15478 words of font info for 57 fonts, out of 8000000 for 9000
+ 22128 strings out of 492609
+ 442574 string characters out of 6129048
+ 535843 words of memory out of 5000000
+ 25481 multiletter control sequences out of 15000+600000
+ 17431 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,14n,65p,812b,886s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "/Users/pavelshuldiner/visualizing-partitions/vispart_slides/.texpadtmp/Visualizing partitions.pdf" (19 pages, 248815 bytes).
+ 56i,14n,65p,812b,660s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "/Users/pavelshuldiner/visualizing-partitions/vispart_slides/.texpadtmp/Visualizing partitions.pdf" (41 pages, 311798 bytes).
 PDF statistics:
- 595 PDF objects out of 1000 (max. 8388607)
- 535 compressed objects within 6 object streams
- 40 named destinations out of 1000 (max. 500000)
+ 1171 PDF objects out of 1200 (max. 8388607)
+ 1082 compressed objects within 11 object streams
+ 84 named destinations out of 1000 (max. 500000)
  73 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -47,10 +47,10 @@
 
 \frame{\frametitle{Presentation Outline}
 \begin{enumerate}
-\item What are partitions? Objects from combinatorics, number theory, representation theory and physics.
-\item Why do we care? Help us study generating functions, derive useful analytic identities, and are building blocks for counting discrete objects.
-\item How do we visualize them? \texttt{vispart}.
-\item Future work. 
+\item What are partitions? Objects from combinatorics, number theory, representation theory and physics. \pause
+\item Why do we care? Help us study generating functions, derive useful analytic identities, and are building blocks for counting discrete objects. \pause
+\item How do we visualize them? \texttt{vispart}. \pause
+\item Future work. \pause
 \end{enumerate}
 }
 \frame{\frametitle{Integer Partitions}
@@ -58,19 +58,21 @@ Fix $n\in\nats_0$ an integer. We say that $\lambda = (\lambda_1,\lambda_2,\ldots
 $$\lambda_1\geq \lambda_2\geq \dotsb \geq\lambda_k$$
 and
 $$|\lambda|=\lambda_1+\lambda_2+\dotsb+\lambda_k = n.$$
+\pause
 We let $p(n)$ denote the total number of partitions of $n$, where we use the convention $p(0)=1$ and $p(n)=0$ for $n$ negative. 
 }
 
 \begin{frame}{Example: partitions of 4}
 We note that $p(4) =5$ by enumerating the partitions of 4: 
-\begin{align*}
-4 &= 4\\
-&= 3+1\\
-&=2+2\\
-&=2+1+1\\
-&=1+1+1+1
-\end{align*}
-We see that there is only one partition with a single part: (4), two partitions with two parts: (3,1) and (2,2), one partition with three parts: (2,1,1), and a single partition with four parts: (1,1,1,1).
+\begin{itemize}
+  \item 4 \pause
+  \item 3 + 1 \pause
+  \item 2 + 2
+  \item 2 + 1 + 1
+  \item 1 + 1 + 1 + 1
+\end{itemize}
+\pause
+Alternatively, we could visualize integer partitions.
 
 \end{frame}
 
@@ -125,15 +127,23 @@ We can represents integer partitions geometrically using Ferrers diagrams,
 	\filldraw (\x*.25, -0.75) circle (.5mm);
 \end{tikzpicture}
 \end{center}
+\pause
 Or by using Young diagrams
 
 $$\yng(4)\qquad \yng(3,1) \qquad \yng(2,2) \qquad \yng(2,1,1) \qquad \yng(1,1,1,1)$$
-
+\pause
 An alternative way of thinking of partitions is algebraic via formal power series.\end{frame}
 \begin{frame}
 \frametitle{Formal power series}
 In general, we say that a sequence $(a_n)_{n\geq 0}$ has generating series $A(q)\in \nats[[q]]$ if $$A(q) = \sum_{n\geq 0}a_nq^n,$$
-where the variable $q$ is variable only in the formal sense (usual algebraic properties like addition, multiplication and formal derivatives and integrals hold).
+\pause where the variable $q$ is variable only in the formal sense. This means that usual algebraic properties hold but analytic ones may not. For instance, we can do \pause
+\begin{itemize}
+  \item addition,
+  \item multiplication, \pause
+  \item formal derivative and integral.
+\end{itemize}
+
+But we may not substitute without being careful.
 
 \end{frame}
 
@@ -144,8 +154,8 @@ where the variable $q$ is variable only in the formal sense (usual algebraic pro
 If $P(q)$ is the generating series for integer partitions, then $P(q)$ has the closed form
 $$P(q) = \sum_{n\geq0}p(n)q^n = \prod_{i\geq 1}\frac{1}{1-q^i}.$$
 
-
-We can think of the right hand side as building blocks for each type of part in a partition. That is,
+\pause 
+We can think of the right hand side as building blocks for each type of part in a partition. \pause That is,
 $$\frac{1}{1-q^i} = \sum_{j \geq 0}q^{ij} = 1 + q^i + q^{2i} +q^{3i} +\dotsb $$
 represents the number of ways we could pick no parts of size $i$, the number of ways we could pick exactly one part of size $i$, exactly two parts of size $i$, three parts of size $i$,$\ldots$
 \end{frame}
@@ -159,10 +169,10 @@ represents the number of ways we could pick no parts of size $i$, the number of 
 	\frametitle{Dufree squares}
 \begin{theorem}
 The generating series for integer partitions is equivalent to
-$$P(q) = \prod_{i\geq 1} \frac{1}{1-q^i} = \sum_{k\geq1}q^{k^2}\prod_{i=1}^{k}\frac{1}{(1-q^i)^2}.$$	
+$$P(q) = \prod_{i\geq 1} \frac{1}{1-q^i} = 1 + \sum_{k\geq1}q^{k^2}\prod_{i=1}^{k}\frac{1}{(1-q^i)^2}.$$	
 \end{theorem}
-
-\begin{proof}
+\pause
+\textbf{Proof by picture}
 \begin{center}
 \begin{tikzpicture}
 \draw (0,0) -- (1,0) -- (1,1) -- (0,1) -- (0,0);
@@ -177,7 +187,6 @@ $$P(q) = \prod_{i\geq 1} \frac{1}{1-q^i} = \sum_{k\geq1}q^{k^2}\prod_{i=1}^{k}\f
 
 \end{tikzpicture}
 \end{center}
-\end{proof}
 \end{frame}
 
 \begin{frame}
@@ -215,17 +224,17 @@ $$S(q) := \sum_{n\geq 0}s(n)q^n = \prod_{i\geq 0}(1+q^{2i+1}).$$
      \begin{subfigure}[b]{0.25\textwidth}
          \centering
          \includegraphics[width=\textwidth]{self_conjugate_colored.png}
-%         \caption{$y=x$}
+         \caption{$(6, 5, 3, 2, 2, 1)$}
 %         \label{fig:y equals x}
      \end{subfigure}
-     \hfill
+     \hfill\pause
      \begin{subfigure}[b]{0.5\textwidth}
          \centering
          \includegraphics[width=\textwidth]{odd_distinct_colored.png}
-%         \caption{$y=3sinx$}
+         \caption{$(11, 7, 1)$}
 %         \label{fig:three sin x}
      \end{subfigure}
-        \caption{A self-conjugate partition with its corresponding image}
+        \caption{A self-conjugate partition with its corresponding image under the bijection.}
         \label{fig:three graphs}
 \end{figure}
 
@@ -238,14 +247,15 @@ Our dependencies are
 \item \texttt{partitions} - to list all partitions up to a particular value.
 \item \texttt{grid} - in order to draw the partitions in a way that scales up.
 \end{itemize}	
+\pause
 
 Our package allows one to 
 \begin{itemize}
-\item Draw any integer partition.
+\item Draw any integer partition. \pause
 \begin{itemize}
-\item Using either Ferrers or Young diagram.
-\item Colour specific boxes; helps communicate specific properties of partitions.
-\item Conjugation mapping is builtin.
+\item Using either Ferrers or Young diagram. \pause
+\item Colour specific boxes; helps communicate specific properties of partitions.\pause 
+\item Conjugation mapping is builtin. \pause
 \end{itemize}
 \item Draw all integer partitions of $n$ for a fixed $n$.
 \end{itemize}
@@ -291,7 +301,7 @@ Improvements to the integer partition list generation.
 \begin{itemize}
 \frametitle{Future work - math}
 \item This helps communicate concepts from the theory of irreducible representations of the symmetric group $S_n$.
-\item Provides an interpretation for \textbf{Littlewood-Richardson rule} which describes how to take a product of symmetric functions.
+\item Provides an interpretation for \textbf{Littlewood-Richardson rule} which describes how to take a product of two symmetric functions (known as Schur functions).
 \end{itemize}
 \end{frame}
 
